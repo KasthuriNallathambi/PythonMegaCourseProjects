@@ -3,6 +3,11 @@ from asyncio import events
 import PySimpleGUI as gui
 import function
 import time
+import os
+
+if not os.path.exists('TodoList.txt'):
+    with open('TodoList.txt','w') as file:
+        pass
 
 label=gui.Text("Enter Todo")
 NewTodo = gui.InputText(tooltip="Enter the todo to add in the list",key="NewTodo")
